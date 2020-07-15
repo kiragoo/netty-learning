@@ -1,8 +1,8 @@
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
-import io.netty.channel.sctp.nio.NioSctpServerChannel;
 import io.netty.channel.socket.SocketChannel;
+import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpRequest;
 import io.netty.handler.codec.http.HttpRequestDecoder;
 import io.netty.handler.codec.http.HttpResponseEncoder;
@@ -55,8 +55,9 @@ public class GPTomcat {
             ServerBootstrap server = new ServerBootstrap();
 
             server.group(bossGroup, workerGroup)
-                    .channel(NioSctpServerChannel.class)
+                    .channel(NioServerSocketChannel.class)
                     .childHandler(new ChannelInitializer<SocketChannel>() {
+                        @Override
                         protected void initChannel(SocketChannel client) throws Exception{
                             client.pipeline().addLast(new HttpResponseEncoder());
                             client.pipeline().addLast(new HttpRequestDecoder());
@@ -67,6 +68,7 @@ public class GPTomcat {
                     .childOption(ChannelOption.SO_KEEPALIVE, true);
             ChannelFuture f = server.bind(port).sync();
             System.out.println("GPTomcat 已经启动, 启动端口: " + port);
+            f.channel().closeFuture().sync();
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
