@@ -17,6 +17,7 @@
 
     <modules>
         <module>netty-demo-cp01-tomcat</module>
+        <module>netty-demo-cp02-echoserver</module>
     </modules>
 
     <properties>

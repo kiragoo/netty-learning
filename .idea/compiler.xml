@@ -7,10 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="netty-demo-cp01-tomcat" />
+        <module name="netty-demo-cp02-echoserver" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="netty-demo-cp01-rpc" target="1.8" />
       <module name="netty-demo-cp01-tomcat" target="1.8" />
+      <module name="netty-demo-cp02-echoServer" target="1.8" />
+      <module name="netty-demo-cp02-echoserver" target="1.8" />
       <module name="netty-learning" target="1.8" />
     </bytecodeTargetLevel>
   </component>
