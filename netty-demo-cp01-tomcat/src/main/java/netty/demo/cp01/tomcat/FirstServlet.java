@@ -8,11 +8,11 @@ public class FirstServlet extends GPServlet {
 
     @Override
     public void doGet(GPRequest request, GPResponse response) throws Exception{
-        this.doGet(request, response);
+        this.doPost(request, response);
     }
 
     @Override
     public void doPost(GPRequest request, GPResponse response) throws Exception {
-        this.doPost(request, response);
+        response.write("This is First Servlet");
     }
 }
