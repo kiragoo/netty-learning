@@ -8,8 +8,11 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.logging.Logger;
 
 class EchoServerReactor implements Runnable{
+
+    private final static Logger logger = Logger.getLogger(EchoServerReactor.class.getName());
 
     private Selector selector;
 
@@ -21,7 +24,7 @@ class EchoServerReactor implements Runnable{
         selector = selector.open();
         serverSocketChannel = ServerSocketChannel.open();
 
-        InetSocketAddress address = new InetSocketAddress(nioDemoConfig.getServerIp(), Integer.parseInt(nioDemoConfig.getServerIp()));
+        InetSocketAddress address = new InetSocketAddress(nioDemoConfig.getServerIp(), Integer.parseInt(nioDemoConfig.getServerPort()));
         serverSocketChannel.socket().bind(address);
 
         serverSocketChannel.configureBlocking(false);
@@ -71,5 +74,6 @@ class EchoServerReactor implements Runnable{
 
     public static void main(String[] args) throws IOException{
         new Thread(new EchoServerReactor()).start();
+        logger.info("echoserver start");
     }
 }
