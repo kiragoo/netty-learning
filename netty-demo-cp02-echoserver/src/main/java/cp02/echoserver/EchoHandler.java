@@ -29,12 +29,14 @@ public class EchoHandler implements Runnable{
             if(state == SENDING){
                socketChannel.write(byteBuffer);
                byteBuffer.clear();
+               logger.info(" 【发送状态....】");
                selectionKey.interestOps(SelectionKey.OP_READ);
                state = RECIVING;
             }else if(state == RECIVING){
                 int len = 0;
                 logger.info(new String(byteBuffer.array(), 0, len));
                 byteBuffer.flip();
+                logger.info("【读取状态.....】");
                 selectionKey.interestOps(SelectionKey.OP_WRITE);
                 state = SENDING;
             }
