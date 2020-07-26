@@ -29,13 +29,11 @@ public class EchoClient {
         }
     }
 
-    public EchoClient() throws IOException {
-    }
 
     public void start() throws IOException{
         InetSocketAddress inetSocketAddress = new InetSocketAddress(nioDemoConfig.getServerIp(), Integer.parseInt(nioDemoConfig.getServerPort()));
 
-        SocketChannel socketChannel = SocketChannel.open();
+        SocketChannel socketChannel = SocketChannel.open(inetSocketAddress);
 
         socketChannel.configureBlocking(false);
 
@@ -75,7 +73,7 @@ public class EchoClient {
                             if (scanner.hasNext()) {
                                 SocketChannel socketChannel = (SocketChannel) sk.channel();
                                 String next = scanner.next();
-                                buffer.put((formatter.format(new Date(System.currentTimeMillis())) + " >>" + next).getBytes());
+                                buffer.put((formatter.format(new Date(System.currentTimeMillis())) + " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>" + next).getBytes());
                                 buffer.flip();
                                 // 操作三：通过DatagramChannel数据报通道发送数据
                                 socketChannel.write(buffer);
