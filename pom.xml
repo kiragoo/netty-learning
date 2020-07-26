@@ -18,6 +18,7 @@
     <modules>
         <module>netty-demo-cp01-tomcat</module>
         <module>netty-demo-cp02-echoserver</module>
+        <module>netty-demo-cp03-jointea</module>
     </modules>
 
     <properties>
