@@ -21,16 +21,20 @@ class EchoServerReactor implements Runnable{
     private NioDemoConfig nioDemoConfig = new NioDemoConfig();
 
     public EchoServerReactor() throws IOException {
+
+        // 初始化 selector
         selector = selector.open();
+        // 初始化 serverSocketChannel
         serverSocketChannel = ServerSocketChannel.open();
-
+        // 初始化 address
         InetSocketAddress address = new InetSocketAddress(nioDemoConfig.getServerIp(), Integer.parseInt(nioDemoConfig.getServerPort()));
+        // 绑定 address
         serverSocketChannel.socket().bind(address);
-
+        // 配置为非阻塞
         serverSocketChannel.configureBlocking(false);
-
+        // 注册 serverSocketChannel 的 accept 事件
         SelectionKey sk = serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
-
+        // 将新的aceptHandler 绑定到 sk 中
         sk.attach(new AcceptorHandler());
 
     }
@@ -43,6 +47,7 @@ class EchoServerReactor implements Runnable{
                 Iterator<SelectionKey> iterator = selectionKeys.iterator();
                 while (iterator.hasNext()){
                     SelectionKey sk = iterator.next();
+                    // sk 对应事件的分发
                     dispatch(sk);
                 }
                 selectionKeys.clear();
@@ -53,6 +58,7 @@ class EchoServerReactor implements Runnable{
     }
 
     void dispatch(SelectionKey sk){
+        // 取出对应 sk 绑定的 handler
         Runnable handler = (Runnable) sk.attachment();
         if(handler != null){
             handler.run();
