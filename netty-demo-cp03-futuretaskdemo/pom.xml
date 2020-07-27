@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>netty-demo-cp03-futuretaskdemo</artifactId>
+<<<<<<< HEAD
     <properties>
         <guava.version>28.1-jre</guava.version>
     </properties>
@@ -22,6 +23,8 @@
             <version>${guava.version}</version>
         </dependency>
     </dependencies>
+=======
+>>>>>>> origin/master
 
 
 </project>
