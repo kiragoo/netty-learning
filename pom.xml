@@ -21,6 +21,7 @@
         <module>netty-demo-cp03-joindemo</module>
         <module>netty-demo-cp03-futuretaskdemo</module>
         <module>netty-demo-cp04-byte2int</module>
+        <module>netty-demo-cp04-byte2string</module>
     </modules>
 
     <properties>
