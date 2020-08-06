@@ -18,10 +18,11 @@
     <modules>
         <module>netty-demo-cp01-tomcat</module>
         <module>netty-demo-cp02-echoserver</module>
-        <module>netty-demo-cp03-joindemo</module>
-        <module>netty-demo-cp03-futuretaskdemo</module>
+        <module>netty-demo-cp03-join</module>
+        <module>netty-demo-cp03-futuretask</module>
         <module>netty-demo-cp04-byte2int</module>
         <module>netty-demo-cp04-byte2string</module>
+        <module>netty-demo-cp05-singleim</module>
     </modules>
 
     <properties>
