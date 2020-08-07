@@ -73,7 +73,7 @@ public class ClientSession {
     }
 
     //写protobuf 数据帧
-    public ChannelFuture witeAndFlush(Object pkg) {
+    public ChannelFuture writeAndFlush(Object pkg) {
         ChannelFuture f = channel.writeAndFlush(pkg);
         return f;
     }
