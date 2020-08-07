@@ -1,9 +1,11 @@
 package com.kirago.imClient.command;
 
+import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
+@Data
 @Service("ChatConsoleCommand")
 public class ChatConsoleCommand implements BaseCommand {
 

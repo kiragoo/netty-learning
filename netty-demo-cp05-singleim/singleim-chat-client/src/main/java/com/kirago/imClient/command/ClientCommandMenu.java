@@ -1,9 +1,11 @@
 package com.kirago.imClient.command;
 
+import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
+@Data
 @Service("ClientCommandMenu")
 public class ClientCommandMenu implements BaseCommand {
     public static final String KEY = "0";
