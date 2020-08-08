@@ -50,7 +50,7 @@ public class NettyClient {
     /**
      * 唯一标记
      */
-    private boolean initFalg = true;
+//    private boolean initFalg = true;
     private User user;
     private GenericFutureListener<ChannelFuture> connectedListener;
 
@@ -98,7 +98,7 @@ public class NettyClient {
                         }
                     }
             );
-            log.info("客户端开始连接 [疯狂创客圈IM]");
+            log.info("客户端开始连接 [单机IM]");
 
             ChannelFuture f = b.connect();
             f.addListener(connectedListener);

@@ -10,18 +10,20 @@ public class ChatMsgBuilder extends BaseBuilder {
 
 
     private ChatMsg chatMsg;
-    private User user;
 
 
+    /**
+    * @Description: 构造聊天报文
+    * @Param: ChatMsg, User, ClientSession
+    * @return: 
+    **/
     public ChatMsgBuilder(ChatMsg chatMsg, User user, ClientSession session) {
         super(ProtoMsg3.HeadType.MESSAGE_REQUEST, session);
         this.chatMsg = chatMsg;
-        this.user = user;
-
     }
 
 
-    public ProtoMsg3.Message build() {
+    private ProtoMsg3.Message build() {
         ProtoMsg3.Message message = buildCommon(-1);
         ProtoMsg3.MessageRequest.Builder cb
                 = ProtoMsg3.MessageRequest.newBuilder();

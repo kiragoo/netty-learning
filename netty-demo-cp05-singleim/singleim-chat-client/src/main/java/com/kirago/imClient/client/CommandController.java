@@ -17,6 +17,13 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+/**
+* @Description:    客户端 fade 功能集
+* @Author:         kirago
+* @CreateDate:     2020/8/7 10:36 下午
+* @UpdateRemark:   修改内容
+* @Version:        1.0
+*/
 @Slf4j
 @Service("CommandController")
 @Data
@@ -88,7 +95,7 @@ public class CommandController {
         } else {
             connectFlag = true;
 
-            log.info("疯狂创客圈 IM 服务器 连接成功!");
+            log.info("单 IM 服务器 连接成功!");
             channel = f.channel();
 
             // 创建会话
@@ -102,7 +109,11 @@ public class CommandController {
 
     };
 
-
+    /**
+    * @Description: 初始化 CommandMap
+    * @Param: 
+    * @return: 
+    **/
     public void initCommandMap() {
         commandMap = new HashMap<>();
         commandMap.put(clientCommandMenu.getKey(), clientCommandMenu);
@@ -134,6 +145,11 @@ public class CommandController {
     }
 
 
+    /**
+    * @Description: java方法描述
+    * @Param: 
+    * @return: 
+    **/
     public void startConnectServer() {
 
         FutureTaskScheduler.add(() ->
@@ -143,16 +159,24 @@ public class CommandController {
         });
     }
 
+    /**
+    * @Description: 唤醒命令收集线程
+    * @Param: 
+    * @return: 
+    **/
 
     public synchronized void notifyCommandThread() {
-        //唤醒，命令收集程
         this.notify();
 
     }
 
+    /**
+    * @Description: 休眠，命令收集线程
+    * @Param: 
+    * @return: 
+    **/
     public synchronized void waitCommandThread() {
 
-        //休眠，命令收集线程
         try {
             this.wait();
         } catch (InterruptedException e) {
@@ -161,6 +185,11 @@ public class CommandController {
 
     }
 
+    /**
+    * @Description: 开始 CommandThreadv
+    * @Param: 
+    * @return: 
+    **/
     public void startCommandThread()
             throws InterruptedException {
         Thread.currentThread().setName("命令线程");
@@ -209,6 +238,11 @@ public class CommandController {
     }
 
     //发送单聊消息
+    /**
+    * @Description: 发送单聊消息
+    * @Param: 
+    * @return: 
+    **/
     private void startOneChat(ChatConsoleCommand c) {
         //登录
         if (!isLogin()) {
@@ -223,6 +257,11 @@ public class CommandController {
 
     }
 
+    /**
+    * @Description: 登录消息
+    * @Param: 
+    * @return: 
+    **/
     private void startLogin(LoginConsoleCommand command) {
         //登录
         if (!isConnectFlag()) {
@@ -241,6 +280,11 @@ public class CommandController {
     }
 
 
+    /**
+    * @Description: 登出
+    * @Param: 
+    * @return: 
+    **/
     private void startLogout(BaseCommand command) {
         //登出
         if (!isLogin()) {
@@ -259,7 +303,4 @@ public class CommandController {
 
         return session.isLogin();
     }
-
-
-
 }

@@ -7,11 +7,16 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import org.springframework.stereotype.Service;
 
+/**
+* @Description:    接受消息处理器
+* @Author:         kirago
+* @CreateDate:     2020/8/8 9:49 下午
+* @UpdateRemark:   修改内容
+* @Version:        1.0
+*/
 @ChannelHandler.Sharable
 @Service("ChatMsgHandler")
 public class ChatMsgHandler extends ChannelInboundHandlerAdapter {
-
-
 
     public ChatMsgHandler() {
 

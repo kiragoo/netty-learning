@@ -7,14 +7,24 @@ import io.netty.channel.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+/**
+* @Description:    登录请求处理器 
+* @Author:         kirago
+* @CreateDate:     2020/8/8 10:07 下午
+* @UpdateRemark:   修改内容
+* @Version:        1.0
+*/
 @Slf4j
 @Service("LoginResponseHandler")
 @ChannelHandler.Sharable
 public class LoginResponseHandler extends ChannelInboundHandlerAdapter {
 
+
     /**
-     * 业务逻辑处理
-     */
+    * @Description: 业务处理逻辑
+    * @Param: 
+    * @return: 
+    **/
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg)
             throws Exception {

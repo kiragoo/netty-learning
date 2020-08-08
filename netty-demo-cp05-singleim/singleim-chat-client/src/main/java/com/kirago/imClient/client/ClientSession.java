@@ -45,13 +45,22 @@ public class ClientSession {
      */
     private Map<String, Object> map = new HashMap<String, Object>();
 
-    //绑定通道
+    /**
+    * @Description: 绑定通道
+    * @Param: Channel
+    * @return: 
+    **/
     public ClientSession(Channel channel) {
         this.channel = channel;
         this.sessionId = String.valueOf(-1);
         channel.attr(ClientSession.SESSION_KEY).set(this);
     }
-    //登录成功之后,设置sessionId
+    
+    /**
+    * @Description: 登录成功之后设置 sessionId
+    * @Param: ChannelHandlerContext, ProtoMsg3.Message
+    * @return: 
+    **/
     public static void loginSuccess(
             ChannelHandlerContext ctx, ProtoMsg3.Message pkg) {
         Channel channel = ctx.channel();
@@ -61,7 +70,11 @@ public class ClientSession {
         log.info("登录成功");
     }
 
-    //获取channel
+    /**
+    * @Description: 获取 Channel 对应的 session
+    * @Param: ChannelHandlerContext
+    * @return: ClientSession
+    **/
     public static ClientSession getSession(ChannelHandlerContext ctx) {
         Channel channel = ctx.channel();
         ClientSession session = channel.attr(ClientSession.SESSION_KEY).get();

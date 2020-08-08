@@ -53,7 +53,7 @@ public abstract class BaseSender {
                 // 回调
                 if (future.isSuccess()) {
                     sendSucced(message);
-                } else {
+                } else{
                     sendfailed(message);
 
                 }

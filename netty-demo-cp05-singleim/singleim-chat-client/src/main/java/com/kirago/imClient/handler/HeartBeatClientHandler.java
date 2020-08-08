@@ -12,6 +12,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+* @Description:    心跳保持处理器
+* @Author:         kirago
+* @CreateDate:     2020/8/8 10:00 下午
+* @UpdateRemark:   修改内容
+* @Version:        1.0
+*/
 @Slf4j
 @ChannelHandler.Sharable
 @Service("HeartBeatClientHandler")
@@ -20,7 +27,11 @@ public class HeartBeatClientHandler extends ChannelInboundHandlerAdapter {
     //心跳的时间间隔，单位为s
     private static final int HEARTBEAT_INTERVAL = 100;
 
-    //在Handler被加入到Pipeline时，开始发送心跳
+    /**
+    * @Description: 将心跳 handler 加入到 Pipline 中时开始发送心跳
+    * @Param: ChannelHandlerContext
+    * @return: 
+    **/
     @Override
     public void handlerAdded(ChannelHandlerContext ctx)
             throws Exception {
@@ -34,8 +45,12 @@ public class HeartBeatClientHandler extends ChannelInboundHandlerAdapter {
         heartBeat(ctx, message);
     }
 
-    //使用定时器，发送心跳报文
-    public void heartBeat(ChannelHandlerContext ctx,
+    /**
+    * @Description: 使用定时器发送心跳报文
+    * @Param: ChannelHandlerContext, ProtoMsg3.Message
+    * @return: 
+    **/
+    private void heartBeat(ChannelHandlerContext ctx,
                           ProtoMsg3.Message heartbeatMsg) {
         ctx.executor().schedule(() -> {
 
@@ -50,9 +65,12 @@ public class HeartBeatClientHandler extends ChannelInboundHandlerAdapter {
         }, HEARTBEAT_INTERVAL, TimeUnit.SECONDS);
     }
 
+
     /**
-     * 接受到服务器的心跳回写
-     */
+    * @Description: 接受到服务器的心跳回写
+    * @Param: 
+    * @return: 
+    **/
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         //判断消息实例

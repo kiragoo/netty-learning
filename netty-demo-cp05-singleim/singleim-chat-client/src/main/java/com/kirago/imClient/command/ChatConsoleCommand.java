@@ -5,6 +5,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
+/**
+* @Description:    聊天命令控制台
+* @Author:         kirago
+* @CreateDate:     2020/8/7 10:57 下午
+* @UpdateRemark:   修改内容
+* @Version:        1.0
+*/
 @Data
 @Service("ChatConsoleCommand")
 public class ChatConsoleCommand implements BaseCommand {

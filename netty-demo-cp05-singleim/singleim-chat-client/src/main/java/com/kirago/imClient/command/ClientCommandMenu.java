@@ -10,6 +10,10 @@ import java.util.Scanner;
 public class ClientCommandMenu implements BaseCommand {
     public static final String KEY = "0";
 
+    /**
+     * @Description 客户端可用命令集
+     * @Type String
+     */
     private String allCommandsShow;
     private String commandInput;
     
