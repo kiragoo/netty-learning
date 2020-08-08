@@ -21,7 +21,7 @@ message LoginRequest {
     string deviceId = 2;  // 设备ID
     string token = 3;       // 用户token
     uint32 platform = 4;  //客户端平台 windows、mac、android、ios、web
-    string app_version = 5;   // APP版本号
+    string appVersion = 5;   // APP版本号
 }
 /*登录响应*/
 message LoginResponse {
@@ -33,15 +33,15 @@ message LoginResponse {
 
 /*聊天消息*/
 message MessageRequest {
-    uint64 msg_id = 1;
+    uint64 msgId = 1;
     string from = 2;
     string to = 3;
     uint64 time = 4;
-    uint32 msg_type = 5;
+    uint32 msgType = 5;
     string content = 6;
     string url = 8;
     string property = 9;
-    string from_nick = 10;
+    string fromNick = 10;
     string json = 11;
 }
 
@@ -55,7 +55,7 @@ message MessageResponse {
 
 /*通知*/
 message MessageNotification {
-    uint64 no_id = 1;
+    uint64 noId = 1;
     string json = 2;
     string timestamp = 3;
 }
@@ -74,7 +74,7 @@ message MessageHeartBeat {
 message Message {
     HeadType       type = 1; //通用字段: 消息类型
     uint64         sequence = 2;  //通用字段：消息序列号
-    string         session_id = 3;   //通用字段：会话id
+    string         sessionId = 3;   //通用字段：会话id
     LoginRequest   loginRequest = 4;   //登录请求
     LoginResponse  loginResponse = 5;   //登录响应
     MessageRequest  messageRequest = 6;    //IM消息请求

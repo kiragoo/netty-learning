@@ -282,7 +282,7 @@ public final class ProtoMsg3 {
      * APP版本号
      * </pre>
      *
-     * <code>string app_version = 5;</code>
+     * <code>string appVersion = 5;</code>
      */
     java.lang.String getAppVersion();
     /**
@@ -290,7 +290,7 @@ public final class ProtoMsg3 {
      * APP版本号
      * </pre>
      *
-     * <code>string app_version = 5;</code>
+     * <code>string appVersion = 5;</code>
      */
     com.google.protobuf.ByteString
         getAppVersionBytes();
@@ -544,14 +544,14 @@ public final class ProtoMsg3 {
       return platform_;
     }
 
-    public static final int APP_VERSION_FIELD_NUMBER = 5;
+    public static final int APPVERSION_FIELD_NUMBER = 5;
     private volatile java.lang.Object appVersion_;
     /**
      * <pre>
      * APP版本号
      * </pre>
      *
-     * <code>string app_version = 5;</code>
+     * <code>string appVersion = 5;</code>
      */
     public java.lang.String getAppVersion() {
       java.lang.Object ref = appVersion_;
@@ -570,7 +570,7 @@ public final class ProtoMsg3 {
      * APP版本号
      * </pre>
      *
-     * <code>string app_version = 5;</code>
+     * <code>string appVersion = 5;</code>
      */
     public com.google.protobuf.ByteString
         getAppVersionBytes() {
@@ -685,7 +685,7 @@ public final class ProtoMsg3 {
       hash = (53 * hash) + getToken().hashCode();
       hash = (37 * hash) + PLATFORM_FIELD_NUMBER;
       hash = (53 * hash) + getPlatform();
-      hash = (37 * hash) + APP_VERSION_FIELD_NUMBER;
+      hash = (37 * hash) + APPVERSION_FIELD_NUMBER;
       hash = (53 * hash) + getAppVersion().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1273,7 +1273,7 @@ public final class ProtoMsg3 {
        * APP版本号
        * </pre>
        *
-       * <code>string app_version = 5;</code>
+       * <code>string appVersion = 5;</code>
        */
       public java.lang.String getAppVersion() {
         java.lang.Object ref = appVersion_;
@@ -1292,7 +1292,7 @@ public final class ProtoMsg3 {
        * APP版本号
        * </pre>
        *
-       * <code>string app_version = 5;</code>
+       * <code>string appVersion = 5;</code>
        */
       public com.google.protobuf.ByteString
           getAppVersionBytes() {
@@ -1312,7 +1312,7 @@ public final class ProtoMsg3 {
        * APP版本号
        * </pre>
        *
-       * <code>string app_version = 5;</code>
+       * <code>string appVersion = 5;</code>
        */
       public Builder setAppVersion(
           java.lang.String value) {
@@ -1329,7 +1329,7 @@ public final class ProtoMsg3 {
        * APP版本号
        * </pre>
        *
-       * <code>string app_version = 5;</code>
+       * <code>string appVersion = 5;</code>
        */
       public Builder clearAppVersion() {
         
@@ -1342,7 +1342,7 @@ public final class ProtoMsg3 {
        * APP版本号
        * </pre>
        *
-       * <code>string app_version = 5;</code>
+       * <code>string appVersion = 5;</code>
        */
       public Builder setAppVersionBytes(
           com.google.protobuf.ByteString value) {
@@ -2257,7 +2257,7 @@ public final class ProtoMsg3 {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 msg_id = 1;</code>
+     * <code>uint64 msgId = 1;</code>
      */
     long getMsgId();
 
@@ -2287,7 +2287,7 @@ public final class ProtoMsg3 {
     long getTime();
 
     /**
-     * <code>uint32 msg_type = 5;</code>
+     * <code>uint32 msgType = 5;</code>
      */
     int getMsgType();
 
@@ -2322,11 +2322,11 @@ public final class ProtoMsg3 {
         getPropertyBytes();
 
     /**
-     * <code>string from_nick = 10;</code>
+     * <code>string fromNick = 10;</code>
      */
     java.lang.String getFromNick();
     /**
-     * <code>string from_nick = 10;</code>
+     * <code>string fromNick = 10;</code>
      */
     com.google.protobuf.ByteString
         getFromNickBytes();
@@ -2483,10 +2483,10 @@ public final class ProtoMsg3 {
               com.kirago.imCommon.common.bean.msg.ProtoMsg3.MessageRequest.class, com.kirago.imCommon.common.bean.msg.ProtoMsg3.MessageRequest.Builder.class);
     }
 
-    public static final int MSG_ID_FIELD_NUMBER = 1;
+    public static final int MSGID_FIELD_NUMBER = 1;
     private long msgId_;
     /**
-     * <code>uint64 msg_id = 1;</code>
+     * <code>uint64 msgId = 1;</code>
      */
     public long getMsgId() {
       return msgId_;
@@ -2569,10 +2569,10 @@ public final class ProtoMsg3 {
       return time_;
     }
 
-    public static final int MSG_TYPE_FIELD_NUMBER = 5;
+    public static final int MSGTYPE_FIELD_NUMBER = 5;
     private int msgType_;
     /**
-     * <code>uint32 msg_type = 5;</code>
+     * <code>uint32 msgType = 5;</code>
      */
     public int getMsgType() {
       return msgType_;
@@ -2680,10 +2680,10 @@ public final class ProtoMsg3 {
       }
     }
 
-    public static final int FROM_NICK_FIELD_NUMBER = 10;
+    public static final int FROMNICK_FIELD_NUMBER = 10;
     private volatile java.lang.Object fromNick_;
     /**
-     * <code>string from_nick = 10;</code>
+     * <code>string fromNick = 10;</code>
      */
     public java.lang.String getFromNick() {
       java.lang.Object ref = fromNick_;
@@ -2698,7 +2698,7 @@ public final class ProtoMsg3 {
       }
     }
     /**
-     * <code>string from_nick = 10;</code>
+     * <code>string fromNick = 10;</code>
      */
     public com.google.protobuf.ByteString
         getFromNickBytes() {
@@ -2881,7 +2881,7 @@ public final class ProtoMsg3 {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + MSG_ID_FIELD_NUMBER;
+      hash = (37 * hash) + MSGID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMsgId());
       hash = (37 * hash) + FROM_FIELD_NUMBER;
@@ -2891,7 +2891,7 @@ public final class ProtoMsg3 {
       hash = (37 * hash) + TIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTime());
-      hash = (37 * hash) + MSG_TYPE_FIELD_NUMBER;
+      hash = (37 * hash) + MSGTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getMsgType();
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
@@ -2899,7 +2899,7 @@ public final class ProtoMsg3 {
       hash = (53 * hash) + getUrl().hashCode();
       hash = (37 * hash) + PROPERTY_FIELD_NUMBER;
       hash = (53 * hash) + getProperty().hashCode();
-      hash = (37 * hash) + FROM_NICK_FIELD_NUMBER;
+      hash = (37 * hash) + FROMNICK_FIELD_NUMBER;
       hash = (53 * hash) + getFromNick().hashCode();
       hash = (37 * hash) + JSON_FIELD_NUMBER;
       hash = (53 * hash) + getJson().hashCode();
@@ -3212,13 +3212,13 @@ public final class ProtoMsg3 {
 
       private long msgId_ ;
       /**
-       * <code>uint64 msg_id = 1;</code>
+       * <code>uint64 msgId = 1;</code>
        */
       public long getMsgId() {
         return msgId_;
       }
       /**
-       * <code>uint64 msg_id = 1;</code>
+       * <code>uint64 msgId = 1;</code>
        */
       public Builder setMsgId(long value) {
         
@@ -3227,7 +3227,7 @@ public final class ProtoMsg3 {
         return this;
       }
       /**
-       * <code>uint64 msg_id = 1;</code>
+       * <code>uint64 msgId = 1;</code>
        */
       public Builder clearMsgId() {
         
@@ -3402,13 +3402,13 @@ public final class ProtoMsg3 {
 
       private int msgType_ ;
       /**
-       * <code>uint32 msg_type = 5;</code>
+       * <code>uint32 msgType = 5;</code>
        */
       public int getMsgType() {
         return msgType_;
       }
       /**
-       * <code>uint32 msg_type = 5;</code>
+       * <code>uint32 msgType = 5;</code>
        */
       public Builder setMsgType(int value) {
         
@@ -3417,7 +3417,7 @@ public final class ProtoMsg3 {
         return this;
       }
       /**
-       * <code>uint32 msg_type = 5;</code>
+       * <code>uint32 msgType = 5;</code>
        */
       public Builder clearMsgType() {
         
@@ -3635,7 +3635,7 @@ public final class ProtoMsg3 {
 
       private java.lang.Object fromNick_ = "";
       /**
-       * <code>string from_nick = 10;</code>
+       * <code>string fromNick = 10;</code>
        */
       public java.lang.String getFromNick() {
         java.lang.Object ref = fromNick_;
@@ -3650,7 +3650,7 @@ public final class ProtoMsg3 {
         }
       }
       /**
-       * <code>string from_nick = 10;</code>
+       * <code>string fromNick = 10;</code>
        */
       public com.google.protobuf.ByteString
           getFromNickBytes() {
@@ -3666,7 +3666,7 @@ public final class ProtoMsg3 {
         }
       }
       /**
-       * <code>string from_nick = 10;</code>
+       * <code>string fromNick = 10;</code>
        */
       public Builder setFromNick(
           java.lang.String value) {
@@ -3679,7 +3679,7 @@ public final class ProtoMsg3 {
         return this;
       }
       /**
-       * <code>string from_nick = 10;</code>
+       * <code>string fromNick = 10;</code>
        */
       public Builder clearFromNick() {
         
@@ -3688,7 +3688,7 @@ public final class ProtoMsg3 {
         return this;
       }
       /**
-       * <code>string from_nick = 10;</code>
+       * <code>string fromNick = 10;</code>
        */
       public Builder setFromNickBytes(
           com.google.protobuf.ByteString value) {
@@ -4576,7 +4576,7 @@ public final class ProtoMsg3 {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint64 no_id = 1;</code>
+     * <code>uint64 noId = 1;</code>
      */
     long getNoId();
 
@@ -4695,10 +4695,10 @@ public final class ProtoMsg3 {
               com.kirago.imCommon.common.bean.msg.ProtoMsg3.MessageNotification.class, com.kirago.imCommon.common.bean.msg.ProtoMsg3.MessageNotification.Builder.class);
     }
 
-    public static final int NO_ID_FIELD_NUMBER = 1;
+    public static final int NOID_FIELD_NUMBER = 1;
     private long noId_;
     /**
-     * <code>uint64 no_id = 1;</code>
+     * <code>uint64 noId = 1;</code>
      */
     public long getNoId() {
       return noId_;
@@ -4847,7 +4847,7 @@ public final class ProtoMsg3 {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + NO_ID_FIELD_NUMBER;
+      hash = (37 * hash) + NOID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getNoId());
       hash = (37 * hash) + JSON_FIELD_NUMBER;
@@ -5116,13 +5116,13 @@ public final class ProtoMsg3 {
 
       private long noId_ ;
       /**
-       * <code>uint64 no_id = 1;</code>
+       * <code>uint64 noId = 1;</code>
        */
       public long getNoId() {
         return noId_;
       }
       /**
-       * <code>uint64 no_id = 1;</code>
+       * <code>uint64 noId = 1;</code>
        */
       public Builder setNoId(long value) {
         
@@ -5131,7 +5131,7 @@ public final class ProtoMsg3 {
         return this;
       }
       /**
-       * <code>uint64 no_id = 1;</code>
+       * <code>uint64 noId = 1;</code>
        */
       public Builder clearNoId() {
         
@@ -6123,7 +6123,7 @@ public final class ProtoMsg3 {
      *通用字段：会话id
      * </pre>
      *
-     * <code>string session_id = 3;</code>
+     * <code>string sessionId = 3;</code>
      */
     java.lang.String getSessionId();
     /**
@@ -6131,7 +6131,7 @@ public final class ProtoMsg3 {
      *通用字段：会话id
      * </pre>
      *
-     * <code>string session_id = 3;</code>
+     * <code>string sessionId = 3;</code>
      */
     com.google.protobuf.ByteString
         getSessionIdBytes();
@@ -6498,14 +6498,14 @@ public final class ProtoMsg3 {
       return sequence_;
     }
 
-    public static final int SESSION_ID_FIELD_NUMBER = 3;
+    public static final int SESSIONID_FIELD_NUMBER = 3;
     private volatile java.lang.Object sessionId_;
     /**
      * <pre>
      *通用字段：会话id
      * </pre>
      *
-     * <code>string session_id = 3;</code>
+     * <code>string sessionId = 3;</code>
      */
     public java.lang.String getSessionId() {
       java.lang.Object ref = sessionId_;
@@ -6524,7 +6524,7 @@ public final class ProtoMsg3 {
      *通用字段：会话id
      * </pre>
      *
-     * <code>string session_id = 3;</code>
+     * <code>string sessionId = 3;</code>
      */
     public com.google.protobuf.ByteString
         getSessionIdBytes() {
@@ -6890,7 +6890,7 @@ public final class ProtoMsg3 {
       hash = (37 * hash) + SEQUENCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getSequence());
-      hash = (37 * hash) + SESSION_ID_FIELD_NUMBER;
+      hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
       hash = (53 * hash) + getSessionId().hashCode();
       if (hasLoginRequest()) {
         hash = (37 * hash) + LOGINREQUEST_FIELD_NUMBER;
@@ -7369,7 +7369,7 @@ public final class ProtoMsg3 {
        *通用字段：会话id
        * </pre>
        *
-       * <code>string session_id = 3;</code>
+       * <code>string sessionId = 3;</code>
        */
       public java.lang.String getSessionId() {
         java.lang.Object ref = sessionId_;
@@ -7388,7 +7388,7 @@ public final class ProtoMsg3 {
        *通用字段：会话id
        * </pre>
        *
-       * <code>string session_id = 3;</code>
+       * <code>string sessionId = 3;</code>
        */
       public com.google.protobuf.ByteString
           getSessionIdBytes() {
@@ -7408,7 +7408,7 @@ public final class ProtoMsg3 {
        *通用字段：会话id
        * </pre>
        *
-       * <code>string session_id = 3;</code>
+       * <code>string sessionId = 3;</code>
        */
       public Builder setSessionId(
           java.lang.String value) {
@@ -7425,7 +7425,7 @@ public final class ProtoMsg3 {
        *通用字段：会话id
        * </pre>
        *
-       * <code>string session_id = 3;</code>
+       * <code>string sessionId = 3;</code>
        */
       public Builder clearSessionId() {
         
@@ -7438,7 +7438,7 @@ public final class ProtoMsg3 {
        *通用字段：会话id
        * </pre>
        *
-       * <code>string session_id = 3;</code>
+       * <code>string sessionId = 3;</code>
        */
       public Builder setSessionIdBytes(
           com.google.protobuf.ByteString value) {
@@ -8467,40 +8467,40 @@ public final class ProtoMsg3 {
   static {
     java.lang.String[] descriptorData = {
       "\n\017ProtoMsg3.proto\022#com.kirago.imCommon.c" +
-      "ommon.bean.msg\"c\n\014LoginRequest\022\013\n\003uid\030\001 " +
+      "ommon.bean.msg\"b\n\014LoginRequest\022\013\n\003uid\030\001 " +
       "\001(\t\022\020\n\010deviceId\030\002 \001(\t\022\r\n\005token\030\003 \001(\t\022\020\n\010" +
-      "platform\030\004 \001(\r\022\023\n\013app_version\030\005 \001(\t\"K\n\rL" +
-      "oginResponse\022\016\n\006result\030\001 \001(\010\022\014\n\004code\030\002 \001" +
-      "(\r\022\014\n\004info\030\003 \001(\t\022\016\n\006expose\030\004 \001(\r\"\253\001\n\016Mes" +
-      "sageRequest\022\016\n\006msg_id\030\001 \001(\004\022\014\n\004from\030\002 \001(" +
-      "\t\022\n\n\002to\030\003 \001(\t\022\014\n\004time\030\004 \001(\004\022\020\n\010msg_type\030" +
-      "\005 \001(\r\022\017\n\007content\030\006 \001(\t\022\013\n\003url\030\010 \001(\t\022\020\n\010p" +
-      "roperty\030\t \001(\t\022\021\n\tfrom_nick\030\n \001(\t\022\014\n\004json" +
-      "\030\013 \001(\t\"M\n\017MessageResponse\022\016\n\006result\030\001 \001(" +
-      "\010\022\014\n\004code\030\002 \001(\r\022\014\n\004info\030\003 \001(\t\022\016\n\006expose\030" +
-      "\004 \001(\r\"E\n\023MessageNotification\022\r\n\005no_id\030\001 " +
-      "\001(\004\022\014\n\004json\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\t\":\n\020" +
-      "MessageHeartBeat\022\013\n\003seq\030\001 \001(\r\022\013\n\003uid\030\002 \001" +
-      "(\t\022\014\n\004json\030\003 \001(\t\"\266\004\n\007Message\022;\n\004type\030\001 \001" +
-      "(\0162-.com.kirago.imCommon.common.bean.msg" +
-      ".HeadType\022\020\n\010sequence\030\002 \001(\004\022\022\n\nsession_i" +
-      "d\030\003 \001(\t\022G\n\014loginRequest\030\004 \001(\01321.com.kira" +
-      "go.imCommon.common.bean.msg.LoginRequest" +
-      "\022I\n\rloginResponse\030\005 \001(\01322.com.kirago.imC" +
-      "ommon.common.bean.msg.LoginResponse\022K\n\016m" +
-      "essageRequest\030\006 \001(\01323.com.kirago.imCommo" +
-      "n.common.bean.msg.MessageRequest\022M\n\017mess" +
-      "ageResponse\030\007 \001(\01324.com.kirago.imCommon." +
-      "common.bean.msg.MessageResponse\022N\n\014notif" +
-      "ication\030\010 \001(\01328.com.kirago.imCommon.comm" +
-      "on.bean.msg.MessageNotification\022H\n\theart" +
-      "Beat\030\t \001(\01325.com.kirago.imCommon.common." +
-      "bean.msg.MessageHeartBeat*\257\001\n\010HeadType\022\021" +
-      "\n\rLOGIN_REQUEST\020\000\022\022\n\016LOGIN_RESPONSE\020\001\022\022\n" +
-      "\016LOGOUT_REQUEST\020\002\022\023\n\017LOGOUT_RESPONSE\020\003\022\016" +
-      "\n\nHEART_BEAT\020\004\022\023\n\017MESSAGE_REQUEST\020\005\022\024\n\020M" +
-      "ESSAGE_RESPONSE\020\006\022\030\n\024MESSAGE_NOTIFICATIO" +
-      "N\020\007b\006proto3"
+      "platform\030\004 \001(\r\022\022\n\nappVersion\030\005 \001(\t\"K\n\rLo" +
+      "ginResponse\022\016\n\006result\030\001 \001(\010\022\014\n\004code\030\002 \001(" +
+      "\r\022\014\n\004info\030\003 \001(\t\022\016\n\006expose\030\004 \001(\r\"\250\001\n\016Mess" +
+      "ageRequest\022\r\n\005msgId\030\001 \001(\004\022\014\n\004from\030\002 \001(\t\022" +
+      "\n\n\002to\030\003 \001(\t\022\014\n\004time\030\004 \001(\004\022\017\n\007msgType\030\005 \001" +
+      "(\r\022\017\n\007content\030\006 \001(\t\022\013\n\003url\030\010 \001(\t\022\020\n\010prop" +
+      "erty\030\t \001(\t\022\020\n\010fromNick\030\n \001(\t\022\014\n\004json\030\013 \001" +
+      "(\t\"M\n\017MessageResponse\022\016\n\006result\030\001 \001(\010\022\014\n" +
+      "\004code\030\002 \001(\r\022\014\n\004info\030\003 \001(\t\022\016\n\006expose\030\004 \001(" +
+      "\r\"D\n\023MessageNotification\022\014\n\004noId\030\001 \001(\004\022\014" +
+      "\n\004json\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\t\":\n\020Messa" +
+      "geHeartBeat\022\013\n\003seq\030\001 \001(\r\022\013\n\003uid\030\002 \001(\t\022\014\n" +
+      "\004json\030\003 \001(\t\"\265\004\n\007Message\022;\n\004type\030\001 \001(\0162-." +
+      "com.kirago.imCommon.common.bean.msg.Head" +
+      "Type\022\020\n\010sequence\030\002 \001(\004\022\021\n\tsessionId\030\003 \001(" +
+      "\t\022G\n\014loginRequest\030\004 \001(\01321.com.kirago.imC" +
+      "ommon.common.bean.msg.LoginRequest\022I\n\rlo" +
+      "ginResponse\030\005 \001(\01322.com.kirago.imCommon." +
+      "common.bean.msg.LoginResponse\022K\n\016message" +
+      "Request\030\006 \001(\01323.com.kirago.imCommon.comm" +
+      "on.bean.msg.MessageRequest\022M\n\017messageRes" +
+      "ponse\030\007 \001(\01324.com.kirago.imCommon.common" +
+      ".bean.msg.MessageResponse\022N\n\014notificatio" +
+      "n\030\010 \001(\01328.com.kirago.imCommon.common.bea" +
+      "n.msg.MessageNotification\022H\n\theartBeat\030\t" +
+      " \001(\01325.com.kirago.imCommon.common.bean.m" +
+      "sg.MessageHeartBeat*\257\001\n\010HeadType\022\021\n\rLOGI" +
+      "N_REQUEST\020\000\022\022\n\016LOGIN_RESPONSE\020\001\022\022\n\016LOGOU" +
+      "T_REQUEST\020\002\022\023\n\017LOGOUT_RESPONSE\020\003\022\016\n\nHEAR" +
+      "T_BEAT\020\004\022\023\n\017MESSAGE_REQUEST\020\005\022\024\n\020MESSAGE" +
+      "_RESPONSE\020\006\022\030\n\024MESSAGE_NOTIFICATION\020\007b\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {

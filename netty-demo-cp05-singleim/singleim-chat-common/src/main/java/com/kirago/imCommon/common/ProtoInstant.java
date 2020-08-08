@@ -3,7 +3,7 @@ package com.kirago.imCommon.common;
 public class ProtoInstant {
 
     /**
-     * 魔数，可以通过配置获取
+     * 魔数，可以通过配置获取 TODO
      */
     public static final short MAGIC_CODE = 0x86;
 
