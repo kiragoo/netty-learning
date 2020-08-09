@@ -7,6 +7,19 @@ import org.apache.commons.lang.StringUtils;
 @Data
 public class ChatMsg {
 
+    private User user;
+
+    private long msgId;
+    private String from;
+    private String to;
+    private long time;
+    private MSGTYPE msgType;
+    private String content;
+    private String url;          //多媒体地址
+    private String property;     //附加属性
+    private String fromNick;     //发送者昵称
+    private String json;         //附加的json串
+    
     //消息类型  1：纯文本  2：音频 3：视频 4：地理位置 5：其他
     public enum MSGTYPE {
         TEXT,
@@ -26,20 +39,6 @@ public class ChatMsg {
         this.setFromNick(user.getNickName());
 
     }
-
-    private User user;
-
-    private long msgId;
-    private String from;
-    private String to;
-    private long time;
-    private MSGTYPE msgType;
-    private String content;
-    private String url;          //多媒体地址
-    private String property;     //附加属性
-    private String fromNick;     //发送者昵称
-    private String json;         //附加的json串
-
 
     public void fillMsg(ProtoMsg3.MessageRequest.Builder cb) {
         if (msgId > 0) {
