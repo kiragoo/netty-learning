@@ -2,6 +2,8 @@ package com.kirago.imCommon.concurrent;
 
 import com.google.common.util.concurrent.*;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -20,6 +22,7 @@ public class CallbackTaskScheduler extends Thread {
     ListeningExecutorService gPool =
             MoreExecutors.listeningDecorator(jPool);
 
+    BeanFactory parentBeanFactory;
 
     private static CallbackTaskScheduler inst = new CallbackTaskScheduler();
 

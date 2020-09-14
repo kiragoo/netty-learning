@@ -1,4 +1,4 @@
-package com.kirago.zk.factory;
+package com.kirago.zk.utills;
 
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;

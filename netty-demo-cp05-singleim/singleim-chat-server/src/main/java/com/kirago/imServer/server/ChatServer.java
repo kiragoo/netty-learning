@@ -80,7 +80,7 @@ public class ChatServer {
 
             ChannelFuture channelFuture = b.bind().sync();
             log.info(
-                    "疯狂创客圈 CrazyIM 服务启动, 端口 " +
+                    "Netty 服务启动, 端口 " +
                             channelFuture.channel().localAddress());
             // 7 监听通道关闭事件
             // 应用程序会一直等待，直到channel关闭

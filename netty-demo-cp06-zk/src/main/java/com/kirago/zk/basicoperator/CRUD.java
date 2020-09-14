@@ -1,6 +1,6 @@
 package com.kirago.zk.basicoperator;
 
-import com.kirago.zk.factory.ClientFactory;
+import com.kirago.zk.utills.ClientFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.utils.CloseableUtils;
@@ -9,7 +9,6 @@ import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 

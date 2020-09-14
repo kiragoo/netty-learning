@@ -1,0 +1,7 @@
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-common/src/main/java/com/kirago/imCommon/common/bean/User.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-common/src/main/java/com/kirago/imCommon/common/bean/ChatMsg.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-common/src/main/java/com/kirago/imCommon/common/codec/ProtobufEncoder.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-common/src/main/java/com/kirago/imCommon/common/bean/msg/ProtoMsg3.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-common/src/main/java/com/kirago/imCommon/common/ProtoInstant.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-common/src/main/java/com/kirago/imCommon/common/exception/InvalidFrameException.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-common/src/main/java/com/kirago/imCommon/common/codec/ProtobufDecoder.java

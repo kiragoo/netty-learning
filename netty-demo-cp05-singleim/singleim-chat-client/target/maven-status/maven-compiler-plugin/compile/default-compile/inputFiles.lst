@@ -1,0 +1,7 @@
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-client/src/main/java/com/kirago/imClient/command/LoginConsoleCommand.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-client/src/main/java/com/kirago/imClient/client/ClientSession.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-client/src/main/java/com/kirago/imClient/protoBuilder/BaseBuilder.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-client/src/main/java/com/kirago/imClient/protoBuilder/LoginMsgBuilder.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-client/src/main/java/com/kirago/imClient/sender/LoginSender.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-client/src/main/java/com/kirago/imClient/sender/BaseSender.java
+/Users/kirago/Documents/Github/netty-learning/netty-demo-cp05-singleim/singleim-chat-client/src/main/java/com/kirago/imClient/command/BaseCommand.java

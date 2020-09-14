@@ -22,7 +22,7 @@ public class ServerSession {
 
 
     public static final AttributeKey<String> KEY_USER_ID =
-            AttributeKey.valueOf("key_user_id");
+            AttributeKey.valueOf("KEY_USER_ID");
 
     public static final AttributeKey<ServerSession> SESSION_KEY =
             AttributeKey.valueOf("SESSION_KEY");

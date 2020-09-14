@@ -1,0 +1,9 @@
+com/kirago/imClient/protoBuilder/BaseBuilder.class
+com/kirago/imClient/client/ClientSession.class
+com/kirago/imClient/command/BaseCommand.class
+com/kirago/imClient/command/LoginConsoleCommand.class
+com/kirago/imClient/protoBuilder/LoginMsgBuilder.class
+com/kirago/imClient/client/ClientSession$1.class
+com/kirago/imClient/sender/BaseSender.class
+com/kirago/imClient/sender/BaseSender$1.class
+com/kirago/imClient/sender/LoginSender.class
