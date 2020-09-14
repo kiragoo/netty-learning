@@ -18,7 +18,7 @@
         <lombok.version>1.18.12</lombok.version>
         <commons.lang.version>3.9</commons.lang.version>
         <slf4j.api.version>1.7.30</slf4j.api.version>
-        <netty.all.version>4.1.36.Final</netty.all.version>
+        <netty.all.version>4.1.42.Final</netty.all.version>
         <gson.version>2.6.2</gson.version>
     </properties>
 
