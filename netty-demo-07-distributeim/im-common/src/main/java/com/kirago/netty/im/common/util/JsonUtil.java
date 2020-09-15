@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.Type;
 
 @Slf4j
 public class JsonUtil {
@@ -36,8 +37,7 @@ public class JsonUtil {
     public static <T>T bytes2PoJo(byte[] bytes, Class<T> clazz){
         try {
             String jsonString = new String(bytes, "UTF-8");
-            T t = jsonString2Object(jsonString, clazz);
-            return t;
+            return jsonString2Object(jsonString, clazz);
         }catch (UnsupportedEncodingException e){
             log.error("字节组转 POJO 错误:{}", e.getMessage());
             e.printStackTrace();
@@ -46,7 +46,10 @@ public class JsonUtil {
     }
     
     public static <T>T jsonString2Object(String str, Class<T> clazz){
-        T t = gson.fromJson(str, clazz);
-        return t;
+        return gson.fromJson(str, clazz);
+    }
+    
+    public static <T>T jsonString2Object(String str, Type type){
+        return gson.fromJson(str, type);
     }
 }

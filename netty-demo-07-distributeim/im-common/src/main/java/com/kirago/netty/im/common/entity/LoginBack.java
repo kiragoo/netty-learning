@@ -10,5 +10,5 @@ public class LoginBack {
     
     private String token;
     
-    private UserDTO userDto;
+    private UserDTO userDTO;
 }

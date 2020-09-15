@@ -14,5 +14,5 @@ public interface ServerProcessor {
 
     Proto3Msg.ProtoMsg.HeadType type();
 
-    boolean action(LocalSession ch, Proto3Msg.ProtoMsg.Message proto);
+    Boolean action(LocalSession ch, Proto3Msg.ProtoMsg.Message proto);
 }

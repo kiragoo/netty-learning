@@ -1,0 +1,15 @@
+server:
+  port: 38080
+spring:
+  application:
+    name: netty-server
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 400
+        max-active: 600
+        max-wait: 1000
+    timeout: 10000
+    database: 0

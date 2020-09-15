@@ -29,3 +29,8 @@ hs_err_pid*
 ./*/target
 ./*/*.iml
 
+/*/*/target
+/*/*/*.iml
+/*/*/*.md
+/*/*/mvnw*
+/*/*/.mvn

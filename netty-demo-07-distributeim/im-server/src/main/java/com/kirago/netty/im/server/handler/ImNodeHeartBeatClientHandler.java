@@ -5,11 +5,13 @@ import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @ChannelHandler.Sharable
+@Service
 public class ImNodeHeartBeatClientHandler extends ChannelInboundHandlerAdapter {
     //心跳的时间间隔，单位为s
     private static final int HEARTBEAT_INTERVAL = 100;
@@ -59,7 +61,7 @@ public class ImNodeHeartBeatClientHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         //判断消息实例
-        if (null == msg || !(msg instanceof Proto3Msg.ProtoMsg.Message)) {
+        if (!(msg instanceof Proto3Msg.ProtoMsg.Message)) {
             super.channelRead(ctx, msg);
             return;
         }
