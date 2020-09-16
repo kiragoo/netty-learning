@@ -1,7 +1,7 @@
 package com.kirago.netty.im.server.distributed;
 
 import com.kirago.netty.im.common.constants.ServerConstants;
-import com.kirago.netty.im.common.entity.ImNode;
+import com.kirago.netty.im.common.entity.PT.ImNode;
 import com.kirago.netty.im.common.protocol.Proto3Msg;
 import com.kirago.netty.im.common.util.JsonUtil;
 import com.kirago.netty.im.common.zk.ZKClient;

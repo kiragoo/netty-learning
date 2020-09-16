@@ -2,8 +2,8 @@ package com.kirago.netty.im.server.handler;
 
 import com.google.gson.reflect.TypeToken;
 import com.kirago.netty.im.common.constants.ServerConstants;
-import com.kirago.netty.im.common.entity.ImNode;
-import com.kirago.netty.im.common.entity.Notification;
+import com.kirago.netty.im.common.entity.PT.ImNode;
+import com.kirago.netty.im.common.entity.PT.Notification;
 import com.kirago.netty.im.common.protocol.Proto3Msg;
 import com.kirago.netty.im.common.util.JsonUtil;
 import com.kirago.netty.im.server.session.LocalSession;

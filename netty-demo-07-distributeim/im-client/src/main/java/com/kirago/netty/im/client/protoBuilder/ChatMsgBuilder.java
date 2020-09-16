@@ -1,13 +1,11 @@
-/**
- * Created by 尼恩 at 疯狂创客圈
- */
-
 package com.kirago.netty.im.client.protoBuilder;
 
-import com.crazymakercircle.im.common.bean.ChatMsg;
-import com.crazymakercircle.im.common.bean.UserDTO;
-import com.crazymakercircle.im.common.bean.msg.ProtoMsg;
-import com.crazymakercircle.imClient.client.ClientSession;
+
+import com.kirago.netty.im.client.client.ClientSession;
+import com.kirago.netty.im.common.entity.DTO.UserDTO;
+import com.kirago.netty.im.common.entity.PT.ChatMsg;
+import com.kirago.netty.im.common.entity.PT.UserPT;
+import com.kirago.netty.im.common.protocol.Proto3Msg;
 
 /**
  * 聊天消息Builder
@@ -17,21 +15,21 @@ public class ChatMsgBuilder extends BaseBuilder {
 
 
     private ChatMsg chatMsg;
-    private UserDTO user;
+    private UserPT userPT;
 
 
-    public ChatMsgBuilder(ChatMsg chatMsg, UserDTO user, ClientSession session) {
-        super(ProtoMsg.HeadType.MESSAGE_REQUEST, session);
+    public ChatMsgBuilder(ChatMsg chatMsg, UserPT userPT, ClientSession session) {
+        super(Proto3Msg.ProtoMsg.HeadType.MESSAGE_REQUEST, session);
         this.chatMsg = chatMsg;
-        this.user = user;
+        this.userPT = userPT;
 
     }
 
 
-    public ProtoMsg.Message build() {
-        ProtoMsg.Message message = buildCommon(-1);
-        ProtoMsg.MessageRequest.Builder cb
-                = ProtoMsg.MessageRequest.newBuilder();
+    public Proto3Msg.ProtoMsg.Message build() {
+        Proto3Msg.ProtoMsg.Message message = buildCommon(-1);
+        Proto3Msg.ProtoMsg.MessageRequest.Builder cb
+                = Proto3Msg.ProtoMsg.MessageRequest.newBuilder();
 
         chatMsg.fillMsg(cb);
         return message
@@ -40,12 +38,12 @@ public class ChatMsgBuilder extends BaseBuilder {
                 .build();
     }
 
-    public static ProtoMsg.Message buildChatMsg(
+    public static Proto3Msg.ProtoMsg.Message buildChatMsg(
             ChatMsg chatMsg,
-            UserDTO user,
+            UserPT userPT,
             ClientSession session) {
         ChatMsgBuilder builder =
-                new ChatMsgBuilder(chatMsg, user, session);
+                new ChatMsgBuilder(chatMsg, userPT, session);
         return builder.build();
 
     }

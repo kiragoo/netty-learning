@@ -2,7 +2,7 @@ server:
   port: 38080
 spring:
   application:
-    name: netty-server
+    name: im-netty-server
   redis:
     host: 127.0.0.1
     port: 6379
@@ -13,3 +13,14 @@ spring:
         max-wait: 1000
     timeout: 10000
     database: 0
+    
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
+  client:
+    enabled: true
+    service-url: 
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+

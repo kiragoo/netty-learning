@@ -1,16 +1,16 @@
 package com.kirago.netty.im.client.protoBuilder;
 
 import com.kirago.netty.im.client.client.ClientSession;
-import com.kirago.netty.im.common.entity.DTO.UserDTO;
+import com.kirago.netty.im.common.entity.PT.UserPT;
 import com.kirago.netty.im.common.protocol.Proto3Msg;
 
 /**
  * 登陆消息Builder
  */
 public class LoginMsgBuilder extends BaseBuilder {
-    private final UserDTO user;
+    private final UserPT user;
 
-    public LoginMsgBuilder(UserDTO user, ClientSession session) {
+    public LoginMsgBuilder(UserPT user, ClientSession session) {
         super(Proto3Msg.ProtoMsg.HeadType.LOGIN_REQUEST, session);
         this.user = user;
     }
@@ -26,8 +26,8 @@ public class LoginMsgBuilder extends BaseBuilder {
         return message.toBuilder().setLoginRequest(lb).build();
     }
 
-    public static ProtoMsg.Message buildLoginMsg(
-            UserDTO user, ClientSession session) {
+    public static Proto3Msg.ProtoMsg.Message buildLoginMsg(
+            UserPT user, ClientSession session) {
         LoginMsgBuilder builder =
                 new LoginMsgBuilder(user, session);
         return builder.build();

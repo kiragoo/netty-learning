@@ -1,9 +1,9 @@
 package com.kirago.netty.im.server.session;
 
 
-import com.kirago.netty.im.common.entity.DTO.UserDTO;
-import com.kirago.netty.im.common.entity.ImNode;
-import com.kirago.netty.im.common.entity.Notification;
+import com.kirago.netty.im.common.entity.PT.UserPT;
+import com.kirago.netty.im.common.entity.PT.ImNode;
+import com.kirago.netty.im.common.entity.PT.Notification;
 import com.kirago.netty.im.common.util.JsonUtil;
 import com.kirago.netty.im.server.distributed.ImWorker;
 import com.kirago.netty.im.server.distributed.OnlineCounter;
@@ -120,7 +120,7 @@ public class SessionManager {
      * @param type    类型
      */
     private void notifyOtherImNode(LocalSession session, int type) {
-        UserDTO user = session.getUser();
+        UserPT user = session.getUser();
         RemoteSession remoteSession = RemoteSession.builder()
                 .sessionId(session.getSessionId())
                 .imNode(PeerManager.getInst().getLocalNode())

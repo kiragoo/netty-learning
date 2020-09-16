@@ -1,8 +1,8 @@
 package com.kirago.netty.im.client.clientHandler;
 
-import com.crazymakercircle.im.common.exception.InvalidFrameException;
-import com.crazymakercircle.imClient.client.ClientSession;
-import com.crazymakercircle.imClient.client.CommandController;
+import com.kirago.netty.im.client.client.ClientSession;
+import com.kirago.netty.im.client.client.CommandController;
+import com.kirago.netty.im.common.exception.InvalidFrameException;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
  **/
 @Slf4j
 @ChannelHandler.Sharable
-@Service("ExceptionHandler")
+@Service
 public class ExceptionHandler extends ChannelInboundHandlerAdapter {
 
     @Autowired

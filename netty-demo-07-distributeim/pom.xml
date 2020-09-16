@@ -17,6 +17,7 @@
         <module>im-server</module>
         <module>im-client</module>
         <module>im-gateway</module>
+        <module>im-eureka</module>
     </modules>
 
 </project>

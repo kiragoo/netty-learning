@@ -1,13 +1,13 @@
 package com.kirago.netty.im.client.ClientSender;
 
-import com.crazymakercircle.im.common.bean.msg.ProtoMsg;
-import com.crazymakercircle.imClient.clientBuilder.LoginMsgBuilder;
-import com.crazymakercircle.util.Print;
+
+import com.kirago.netty.im.client.protoBuilder.LoginMsgBuilder;
+import com.kirago.netty.im.common.protocol.Proto3Msg;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 @Slf4j
-@Service("LoginSender")
+@Service
 public class LoginSender extends BaseSender {
 
 
@@ -16,9 +16,9 @@ public class LoginSender extends BaseSender {
             log.info("还没有建立连接!");
             return;
         }
-        Print.tcfo("发送登录消息");
-        ProtoMsg.Message message =
-                LoginMsgBuilder.buildLoginMsg(getUser(), getSession());
+        log.info("发送登录消息");
+        Proto3Msg.ProtoMsg.Message message =
+                LoginMsgBuilder.buildLoginMsg(getUserPT(), getSession());
         super.sendMsg(message);
     }
 

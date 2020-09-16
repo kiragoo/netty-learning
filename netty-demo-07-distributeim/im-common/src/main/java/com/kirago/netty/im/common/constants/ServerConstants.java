@@ -13,7 +13,8 @@ public class ServerConstants {
      */
     public static final String WORKER_PREFIX_PATH = WORKER_PARENT_PATH + "/seq-";
 
-
+    public static final String WEB_URL = "http://127.0.0.1:38080";
+    
     /**
      * the numbers of account online
      */

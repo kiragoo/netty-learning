@@ -2,9 +2,9 @@ package com.kirago.netty.im.server.distributed;
 
 import com.kirago.netty.im.common.codec.ProtobufDecoder;
 import com.kirago.netty.im.common.codec.ProtobufEncoder;
-import com.kirago.netty.im.common.entity.DTO.UserDTO;
-import com.kirago.netty.im.common.entity.ImNode;
-import com.kirago.netty.im.common.entity.Notification;
+import com.kirago.netty.im.common.entity.PT.UserPT;
+import com.kirago.netty.im.common.entity.PT.ImNode;
+import com.kirago.netty.im.common.entity.PT.Notification;
 import com.kirago.netty.im.common.protocol.Proto3Msg;
 import com.kirago.netty.im.common.util.JsonUtil;
 import com.kirago.netty.im.server.handler.ImNodeExceptionHandler;
@@ -34,7 +34,7 @@ public class PeerSender {
      * 唯一标记
      */
     private boolean connectFlag = false;
-    private UserDTO user;
+    private UserPT user;
 
     GenericFutureListener<ChannelFuture> closeListener = (ChannelFuture f) ->
     {

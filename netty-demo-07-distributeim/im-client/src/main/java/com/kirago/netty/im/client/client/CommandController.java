@@ -4,10 +4,12 @@ package com.kirago.netty.im.client.client;
 import com.kirago.netty.im.client.ClientSender.ChatSender;
 import com.kirago.netty.im.client.ClientSender.LoginSender;
 import com.kirago.netty.im.client.clientCommand.*;
+import com.kirago.netty.im.client.feignClient.WebOperator;
 import com.kirago.netty.im.common.concurrent.FutureTaskScheduler;
 import com.kirago.netty.im.common.entity.DTO.UserDTO;
-import com.kirago.netty.im.common.entity.ImNode;
-import com.kirago.netty.im.common.entity.LoginBack;
+import com.kirago.netty.im.common.entity.PT.UserPT;
+import com.kirago.netty.im.common.entity.PT.ImNode;
+import com.kirago.netty.im.common.entity.PT.LoginBack;
 import com.kirago.netty.im.common.util.JsonUtil;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -23,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 
 @Slf4j
 @Data
-@Service("CommandController")
+@Service
 public class CommandController {
 
     //聊天命令收集类
@@ -63,7 +65,7 @@ public class CommandController {
 
 
     private boolean connectFlag = false;
-    private UserDTO user;
+    private UserPT userPT;
 
     GenericFutureListener<ChannelFuture> closeListener = (ChannelFuture f) ->
     {
@@ -185,13 +187,10 @@ public class CommandController {
 
 
 
-        UserDTO user = new UserDTO();
-        user.setUserId(command.getUserName());
-        user.setToken(command.getPassword());
-        user.setDevId("1111");
+        UserDTO userDTO = new UserDTO();
 
         log.info("step1：开始登录WEB GATE");
-        LoginBack webBack = WebOperator.login(command.getUserName(), command.getPassword());
+        LoginBack webBack = WebOperator.login(userDTO);
         ImNode node = webBack.getImNode();
         log.info("step1 WEB GATE 返回的node节点是：{}", JsonUtil.object2JsonString(node));
 
@@ -207,9 +206,9 @@ public class CommandController {
 
         log.info("step3：开始登录Netty 服务节点");
 
-        this.user = user;
-        session.setUser(user);
-        loginSender.setUser(user);
+        this.userPT = userPT;
+        session.setUser(userPT);
+        loginSender.setUserPT(userPT);
         loginSender.setSession(session);
         loginSender.sendLoginMsg();
         waitCommandThread();
@@ -269,7 +268,7 @@ public class CommandController {
             return;
         }
         chatSender.setSession(session);
-        chatSender.setUser(user);
+        chatSender.setUserPT(userPT);
         chatSender.sendChatMsg(c.getToUserId(), c.getMessage());
 
 

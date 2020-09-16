@@ -1,6 +1,6 @@
 package com.kirago.netty.im.client.client;
 
-import com.kirago.netty.im.common.entity.DTO.UserDTO;
+import com.kirago.netty.im.common.entity.PT.UserPT;
 import com.kirago.netty.im.common.protocol.Proto3Msg;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -29,7 +29,7 @@ public class ClientSession {
      * 用户实现客户端会话管理的核心
      */
     private Channel channel;
-    private UserDTO user;
+    private UserPT user;
 
     /**
      * 保存登录后的服务端sessionid

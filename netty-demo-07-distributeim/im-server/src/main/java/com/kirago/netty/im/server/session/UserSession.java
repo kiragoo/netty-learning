@@ -1,6 +1,6 @@
 package com.kirago.netty.im.server.session;
 
-import com.kirago.netty.im.common.entity.ImNode;
+import com.kirago.netty.im.common.entity.PT.ImNode;
 import com.kirago.netty.im.server.distributed.ImWorker;
 import lombok.Data;
 

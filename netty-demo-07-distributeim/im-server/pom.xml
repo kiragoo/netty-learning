@@ -17,9 +17,15 @@
         <java.version>1.8</java.version>
         <springboot.version>2.3.3.RELEASE</springboot.version>
         <jedis.version>3.3.0</jedis.version>
+        <srpingcloud.version>2.2.0.RELEASE</srpingcloud.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+            <version>${srpingcloud.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>

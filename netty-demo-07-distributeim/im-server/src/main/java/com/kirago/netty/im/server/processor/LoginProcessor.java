@@ -1,13 +1,12 @@
 package com.kirago.netty.im.server.processor;
 
 import com.kirago.netty.im.common.constants.ProtoInstant;
-import com.kirago.netty.im.common.entity.DTO.UserDTO;
+import com.kirago.netty.im.common.entity.PT.UserPT;
 import com.kirago.netty.im.common.protocol.Proto3Msg;
 import com.kirago.netty.im.server.protoBuilder.LoginResponseBuilder;
 import com.kirago.netty.im.server.session.LocalSession;
 import com.kirago.netty.im.server.session.ServerSession;
 import com.kirago.netty.im.server.session.SessionManager;
-import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,7 +36,7 @@ public class LoginProcessor extends AbstractServerProcessor {
         Proto3Msg.ProtoMsg.LoginRequest info = proto.getLoginRequest();
         long seqNo = proto.getSequence();
 
-        UserDTO user = UserDTO.fromMsg(info);
+        UserPT user = UserPT.fromMsg(info);
 
         //检查用户
         boolean isValidUser = checkUser(user);
@@ -71,7 +70,7 @@ public class LoginProcessor extends AbstractServerProcessor {
         return true;
     }
 
-    private boolean checkUser(UserDTO user) {
+    private boolean checkUser(UserPT user) {
 
         //校验用户,比较耗时的操作,需要100 ms以上的时间
         //方法1：调用远程用户restfull 校验服务

@@ -5,7 +5,7 @@ import com.kirago.netty.im.client.client.ClientSession;
 import com.kirago.netty.im.client.client.CommandController;
 import com.kirago.netty.im.common.concurrent.CallbackTask;
 import com.kirago.netty.im.common.concurrent.CallbackTaskScheduler;
-import com.kirago.netty.im.common.entity.DTO.UserDTO;
+import com.kirago.netty.im.common.entity.PT.UserPT;
 import com.kirago.netty.im.common.protocol.Proto3Msg;
 import io.netty.channel.ChannelFuture;
 import io.netty.util.concurrent.Future;
@@ -19,7 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public abstract class BaseSender {
 
 
-    private UserDTO user;
+    private UserPT userPT;
     private ClientSession session;
 
     @Autowired
@@ -92,7 +92,7 @@ public abstract class BaseSender {
                     BaseSender.this.sendSucced(message);
 
                 } else {
-                    BaseSender.this.sendfailed(message);
+                    BaseSender.this.sendFailed(message);
 
                 }
 
@@ -105,8 +105,6 @@ public abstract class BaseSender {
 
             }
         });
-
-
     }
 
     protected void sendSucced(Proto3Msg.ProtoMsg.Message message) {
@@ -114,7 +112,7 @@ public abstract class BaseSender {
 
     }
 
-    protected void sendfailed(Proto3Msg.ProtoMsg.Message message) {
+    protected void sendFailed(Proto3Msg.ProtoMsg.Message message) {
         log.info("发送失败");
     }
 

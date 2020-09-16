@@ -1,9 +1,11 @@
-package com.kirago.netty.im.common.entity;
+package com.kirago.netty.im.common.entity.PT;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
 * @description:    IMNode 节点类
@@ -14,6 +16,7 @@ import java.util.Objects;
 */
 
 @Data
+@NoArgsConstructor
 public class ImNode implements Comparable<ImNode>, Serializable {
 
     private static final long serialVersionUID = -6657292903641494978L;
@@ -26,7 +29,7 @@ public class ImNode implements Comparable<ImNode>, Serializable {
     /**
      * the numbers of netty service
      */
-    private Integer balance = 0;
+    private AtomicInteger balance ;
 
     /**
      * the ip of netty server
@@ -37,8 +40,6 @@ public class ImNode implements Comparable<ImNode>, Serializable {
      * the port of netty server
      */
     private Integer port;
-    
-    public ImNode(){}
     
     public ImNode(String host,Integer port) {
         this.host = host;
@@ -76,8 +77,8 @@ public class ImNode implements Comparable<ImNode>, Serializable {
      */
     @Override
     public int compareTo(ImNode o) {
-        int weight1 = this.balance;
-        int weight2 = o.balance;
+        int weight1 = this.getBalance().get();
+        int weight2 = o.getBalance().get();
         if(weight1 > weight2){
             return 1;
         }else if(weight2 > weight1){
@@ -87,10 +88,10 @@ public class ImNode implements Comparable<ImNode>, Serializable {
     }
     
     public void incrementBalance(){
-        balance++;
+        this.balance.incrementAndGet();
     }
     
     public void decrementBalance(){
-        balance--;
+        this.balance.decrementAndGet();
     }
 }

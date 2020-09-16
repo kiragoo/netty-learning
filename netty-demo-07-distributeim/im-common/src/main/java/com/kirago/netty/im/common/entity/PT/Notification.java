@@ -1,4 +1,4 @@
-package com.kirago.netty.im.common.entity;
+package com.kirago.netty.im.common.entity.PT;
 
 
 import lombok.Data;

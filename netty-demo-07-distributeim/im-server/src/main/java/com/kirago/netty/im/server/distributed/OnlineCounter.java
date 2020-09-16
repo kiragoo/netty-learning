@@ -3,12 +3,14 @@ package com.kirago.netty.im.server.distributed;
 import com.kirago.netty.im.common.constants.ServerConstants;
 import com.kirago.netty.im.common.zk.ZKClient;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.recipes.atomic.AtomicValue;
 import org.apache.curator.framework.recipes.atomic.DistributedAtomicLong;
 import org.apache.curator.retry.RetryNTimes;
 
 @Data
+@NoArgsConstructor
 public class OnlineCounter {
 
     private static final String PATH =
@@ -42,9 +44,6 @@ public class OnlineCounter {
 
     }
 
-    private OnlineCounter() {
-
-    }
 
     /**
      * 增加计数

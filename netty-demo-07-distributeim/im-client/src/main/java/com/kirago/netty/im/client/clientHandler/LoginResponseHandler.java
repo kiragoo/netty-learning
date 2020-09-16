@@ -1,10 +1,9 @@
 package com.kirago.netty.im.client.clientHandler;
 
-
-import com.crazymakercircle.im.common.ProtoInstant;
-import com.crazymakercircle.im.common.bean.msg.ProtoMsg;
-import com.crazymakercircle.imClient.client.ClientSession;
-import com.crazymakercircle.imClient.client.CommandController;
+import com.kirago.netty.im.client.client.ClientSession;
+import com.kirago.netty.im.client.client.CommandController;
+import com.kirago.netty.im.common.constants.ProtoInstant;
+import com.kirago.netty.im.common.protocol.Proto3Msg;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -14,8 +13,8 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @ChannelHandler.Sharable
-@Service("LoginResponceHandler")
-public class LoginResponceHandler extends ChannelInboundHandlerAdapter {
+@Service
+public class LoginResponseHandler extends ChannelInboundHandlerAdapter {
 
     @Autowired
     CommandController commandController;
@@ -28,22 +27,22 @@ public class LoginResponceHandler extends ChannelInboundHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg)
             throws Exception {
         //判断消息实例
-        if (null == msg || !(msg instanceof ProtoMsg.Message)) {
+        if (!(msg instanceof Proto3Msg.ProtoMsg.Message)) {
             super.channelRead(ctx, msg);
             return;
         }
 
         //判断类型
-        ProtoMsg.Message pkg = (ProtoMsg.Message) msg;
-        ProtoMsg.HeadType headType = ((ProtoMsg.Message) msg).getType();
-        if (!headType.equals(ProtoMsg.HeadType.LOGIN_RESPONSE)) {
+        Proto3Msg.ProtoMsg.Message pkg = (Proto3Msg.ProtoMsg.Message) msg;
+        Proto3Msg.ProtoMsg.HeadType headType = ((Proto3Msg.ProtoMsg.Message) msg).getType();
+        if (!headType.equals(Proto3Msg.ProtoMsg.HeadType.LOGIN_RESPONSE)) {
             super.channelRead(ctx, msg);
             return;
         }
 
 
         //判断返回是否成功
-        ProtoMsg.LoginResponse info = pkg.getLoginResponse();
+        Proto3Msg.ProtoMsg.LoginResponse info = pkg.getLoginResponse();
 
         ProtoInstant.ResultCodeEnum result =
                 ProtoInstant.ResultCodeEnum.values()[info.getCode()];

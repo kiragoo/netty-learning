@@ -3,7 +3,7 @@ package com.kirago.netty.im.client.clientHandler;
 
 import com.kirago.netty.im.client.client.ClientSession;
 import com.kirago.netty.im.client.protoBuilder.HeartBeatMsgBuilder;
-import com.kirago.netty.im.common.entity.DTO.UserDTO;
+import com.kirago.netty.im.common.entity.PT.UserPT;
 import com.kirago.netty.im.common.protocol.Proto3Msg;
 import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
@@ -25,7 +25,7 @@ public class HeartBeatClientHandler extends ChannelInboundHandlerAdapter {
     public void handlerAdded(ChannelHandlerContext ctx)
             throws Exception {
         ClientSession session = ClientSession.getSession(ctx);
-        UserDTO user = session.getUser();
+        UserPT user = session.getUser();
         HeartBeatMsgBuilder builder =
                 new HeartBeatMsgBuilder(user, session);
 

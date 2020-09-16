@@ -86,14 +86,14 @@ public class ChatServer {
             try {
 
                 channelFuture = b.bind().sync();
-                log.info("疯狂创客圈 CrazyIM 启动, 端口为： " +
+                log.info("IM 启动, 端口为： " +
                         channelFuture.channel().localAddress());
                 isStart = true;
             } catch (Exception e) {
                 log.error("发生启动异常", e);
-                port++;
-                log.info("尝试一个新的端口：" + port);
-                b.localAddress(new InetSocketAddress(port));
+//                port++;
+//                log.info("尝试一个新的端口：" + port);
+//                b.localAddress(new InetSocketAddress(port));
             }
         }
 

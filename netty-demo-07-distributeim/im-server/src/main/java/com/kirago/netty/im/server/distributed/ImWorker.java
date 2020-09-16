@@ -1,13 +1,20 @@
 package com.kirago.netty.im.server.distributed;
 
 import com.kirago.netty.im.common.constants.ServerConstants;
-import com.kirago.netty.im.common.entity.ImNode;
+import com.kirago.netty.im.common.entity.PT.ImNode;
 import com.kirago.netty.im.common.util.JsonUtil;
 import com.kirago.netty.im.common.zk.ZKClient;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
 
+/**
+* @description:    协调客户端
+* @author:         kirago
+* @date:     2020/9/16 5:03 下午
+* @updateRemark:   修改内容
+* @version:        1.0
+*/
 public class ImWorker {
 
     //Zk curator 客户端

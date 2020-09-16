@@ -1,9 +1,7 @@
-package com.kirago.netty.im.gateway.balance;
-
-
+package com.kirago.netty.im.common.balance;
 
 import com.kirago.netty.im.common.constants.ServerConstants;
-import com.kirago.netty.im.common.entity.ImNode;
+import com.kirago.netty.im.common.entity.PT.ImNode;
 import com.kirago.netty.im.common.util.JsonUtil;
 import com.kirago.netty.im.common.zk.ZKClient;
 import lombok.Data;
@@ -11,11 +9,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.curator.framework.CuratorFramework;
 import org.springframework.stereotype.Service;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 
 @Data
 @Slf4j
@@ -28,7 +24,6 @@ public class ImLoadBalance {
 
     public ImLoadBalance() {
         this.client = ZKClient.instance.getClient();
-//        managerPath=ServerConstants.MANAGE_PATH+"/";
         workParentPath= ServerConstants.WORKER_PARENT_PATH;
     }
 
@@ -41,12 +36,10 @@ public class ImLoadBalance {
         List<ImNode> workers = getWorkers();
 
         log.info("全部节点如下：");
-        workers.stream().forEach(node -> {
+        workers.forEach(node -> {
             log.info("节点信息：{}", JsonUtil.object2JsonString(node));
         });
-        ImNode best = balance(workers);
-
-        return best;
+        return balance(workers);
     }
 
     /**
@@ -87,10 +80,10 @@ public class ImLoadBalance {
         }
 
         for (String child : children) {
-            log.info("child:", child);
+            log.info("child: {}", child);
             byte[] payload = null;
             try {
-                payload = client.getData().forPath(workParentPath+"/"+child);
+                payload = client.getData().forPath(workParentPath+ "/" +child);
 
             } catch (Exception e) {
                 e.printStackTrace();

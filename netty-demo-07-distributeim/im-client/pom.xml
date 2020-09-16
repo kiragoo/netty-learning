@@ -17,6 +17,7 @@
         <java.version>1.8</java.version>
         <springboot.version>2.3.3.RELEASE</springboot.version>
         <lombok.version>1.18.12</lombok.version>
+        <spring.cloud.version>2.2.0.RELEASE</spring.cloud.version>
     </properties>
 
     <dependencies>
@@ -35,6 +36,11 @@
             <groupId>com.kirago.demo</groupId>
             <artifactId>im-common</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+            <version>${spring.cloud.version}</version>
         </dependency>
 
         <dependency>

@@ -2,7 +2,7 @@ package com.kirago.netty.im.server.session;
 
 
 import com.kirago.netty.im.common.constants.ServerConstants;
-import com.kirago.netty.im.common.entity.DTO.UserDTO;
+import com.kirago.netty.im.common.entity.PT.UserPT;
 import com.kirago.netty.im.common.util.JsonUtil;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -37,7 +37,7 @@ public class LocalSession implements ServerSession {
     //通道
     private Channel channel;
     //用户
-    private UserDTO user;
+    private UserPT user;
 
     //session唯一标示
     private final String sessionId;
@@ -128,11 +128,11 @@ public class LocalSession implements ServerSession {
     }
 
 
-    public UserDTO getUser() {
+    public UserPT getUser() {
         return user;
     }
 
-    public void setUser(UserDTO user) {
+    public void setUser(UserPT user) {
         this.user = user;
         user.setSessionId(sessionId);
     }

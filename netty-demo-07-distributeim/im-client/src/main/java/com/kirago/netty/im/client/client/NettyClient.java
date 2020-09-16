@@ -4,10 +4,10 @@ import com.kirago.netty.im.client.ClientSender.ChatSender;
 import com.kirago.netty.im.client.ClientSender.LoginSender;
 import com.kirago.netty.im.client.clientHandler.ChatMsgHandler;
 import com.kirago.netty.im.client.clientHandler.ExceptionHandler;
-import com.kirago.netty.im.client.clientHandler.LoginResponceHandler;
+import com.kirago.netty.im.client.clientHandler.LoginResponseHandler;
 import com.kirago.netty.im.common.codec.ProtobufDecoder;
 import com.kirago.netty.im.common.codec.ProtobufEncoder;
-import com.kirago.netty.im.common.entity.DTO.UserDTO;
+import com.kirago.netty.im.common.entity.PT.UserPT;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.*;
@@ -34,7 +34,7 @@ public class NettyClient {
     private ChatMsgHandler chatMsgHandler;
 
     @Autowired
-    private LoginResponceHandler loginResponceHandler;
+    private LoginResponseHandler loginResponseHandler;
 
 
     @Autowired
@@ -48,8 +48,8 @@ public class NettyClient {
     /**
      * 唯一标记
      */
-    private boolean initFalg = true;
-    private UserDTO user;
+    private boolean initFlag = true;
+    private UserPT user;
     private GenericFutureListener<ChannelFuture> connectedListener;
 
     private Bootstrap b;
@@ -90,7 +90,7 @@ public class NettyClient {
                         public void initChannel(SocketChannel ch) {
                             ch.pipeline().addLast("decoder", new ProtobufDecoder());
                             ch.pipeline().addLast("encoder", new ProtobufEncoder());
-                            ch.pipeline().addLast("loginResponseHandler",loginResponceHandler);
+                            ch.pipeline().addLast("loginResponseHandler",loginResponseHandler);
                             ch.pipeline().addLast("chatMsgHandler",chatMsgHandler);
                             ch.pipeline().addLast("exceptionHandler",exceptionHandler);
                         }
