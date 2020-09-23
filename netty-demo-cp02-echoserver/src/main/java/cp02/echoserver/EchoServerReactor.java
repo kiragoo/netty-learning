@@ -10,6 +10,23 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.logging.Logger;
 
+/**
+ * <p>
+ * 回显服务端设计
+ * EchoSerReactor implements {@link Runnable} {
+ * 
+ *     构造函数{
+ *          selector {@link Selector}
+ *          serverSocketChannel {@link ServerSocketChannel}
+ *          serverSocketChannel 绑定 ip + port
+ *          serverSocketChannel 配置为非阻塞
+ *          serverSocketChannel 将对应的事件注册到 selector 中
+ *          sk {@link SelectionKey} 附属相关 Handler【AcceptorHandler】
+ *     }
+ *     
+ * }
+ * </p>
+ */
 class EchoServerReactor implements Runnable{
 
     private final static Logger logger = Logger.getLogger(EchoServerReactor.class.getName());
@@ -34,7 +51,7 @@ class EchoServerReactor implements Runnable{
         serverSocketChannel.configureBlocking(false);
         // 注册 serverSocketChannel 的 accept 事件
         SelectionKey sk = serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
-        // 将新的aceptHandler 绑定到 sk 中
+        // 将新的acceptHandler 绑定到 sk 中
         sk.attach(new AcceptorHandler());
 
     }
@@ -61,6 +78,7 @@ class EchoServerReactor implements Runnable{
         // 取出对应 sk 绑定的 handler
         Runnable handler = (Runnable) sk.attachment();
         if(handler != null){
+            // 另起 Handler 线程进行对应 Handler 逻辑处理
             handler.run();
         }
     }
@@ -70,6 +88,7 @@ class EchoServerReactor implements Runnable{
             try {
                 SocketChannel channel = serverSocketChannel.accept();
                 if(channel!= null){
+                    // 需要将对应 selector 及 channel 中传递到 Handler 中
                     new EchoHandler(selector, channel);
                 }
             }catch (IOException e){
