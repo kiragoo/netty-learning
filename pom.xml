@@ -24,7 +24,9 @@
         <module>netty-demo-cp04-byte2string</module>
         <module>netty-demo-cp05-singleim</module>
         <module>netty-demo-cp06-zk</module>
-        <module>netty-demo-07-distributeim</module>
+        <module>netty-demo-cp07-distributeim</module>
+        <module>netty-demo-cp00-filechannel</module>
+        <module>netty-demo-cp00-selector</module>
     </modules>
 
     <properties>

@@ -1,7 +1,0 @@
-server:
-  port: 38081
-
-remote:
-  server: 127.0.0.1
-  port: 38080
-  

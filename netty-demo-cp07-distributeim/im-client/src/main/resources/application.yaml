@@ -1,0 +1,16 @@
+server:
+  port: 38081
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: env,beans
+
+gateway:
+  baseUrl: http://127.0.0.1:38082
+  user: /user
+  
