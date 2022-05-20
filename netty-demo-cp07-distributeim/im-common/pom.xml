@@ -19,7 +19,7 @@
         <commons.lang.version>3.9</commons.lang.version>
         <slf4j.api.version>1.7.30</slf4j.api.version>
         <netty.all.version>4.1.36.Final</netty.all.version>
-        <gson.version>2.6.2</gson.version>
+        <gson.version>2.8.9</gson.version>
         <orika.version>1.5.4</orika.version>
         <jjwt.version>0.9.1</jjwt.version>
         <swagger.version>2.9.2</swagger.version>
