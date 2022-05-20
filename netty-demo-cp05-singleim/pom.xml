@@ -24,7 +24,7 @@
         <zookeepker.version>3.4.14</zookeepker.version>
         <curator.version>4.2.0</curator.version>
         <protobuf-java>3.12.2</protobuf-java>
-        <gson>2.8.6</gson>
+        <gson>2.8.9</gson>
         <common-lang>2.6</common-lang>
         <lombok>1.18.12</lombok>
         <guava>23.0</guava>
