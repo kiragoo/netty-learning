@@ -20,7 +20,7 @@
         <springboot.version>2.3.3.RELEASE</springboot.version>
         <jedis.version>3.3.0</jedis.version>
         <mybatis.plus.version>3.4.0</mybatis.plus.version>
-        <mysql.connector.version>8.0.19</mysql.connector.version>
+        <mysql.connector.version>8.0.28</mysql.connector.version>
     </properties>
 
     <dependencies>
